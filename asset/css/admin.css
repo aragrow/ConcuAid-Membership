@@ -1,0 +1,76 @@
+/* Make the table full width */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto; /* Allow horizontal scrolling on small screens */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on touch devices */
+    margin: 20px 0;
+}
+
+/* Style for the table */
+table {
+    width: 100%; /* Ensure the table spans the full width */
+    border-collapse: collapse; /* Collapse borders between cells */
+    table-layout: auto; /* Automatically adjust the column width */
+}
+
+/* Table header styling */
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+/* Table header background color */
+th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+/* Row background color on hover */
+tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* Make the updated and error messages stand out */
+.updated, .error {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.updated {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+.error {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+
+/* Responsiveness for small screens */
+@media (max-width: 768px) {
+    table {
+        width: 100%;
+        display: block; /* Turn table into block for smaller screens */
+        overflow-x: auto; /* Enable horizontal scrolling */
+    }
+
+    th, td {
+        display: block; /* Make each column stack */
+        width: 100%; /* Ensure each column takes full width */
+        box-sizing: border-box; /* Avoid content overflow */
+    }
+
+    td:before {
+        /* Display column name before each data in mobile view */
+        content: attr(data-label);
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .table-responsive {
+        padding: 0;
+    }
+}
